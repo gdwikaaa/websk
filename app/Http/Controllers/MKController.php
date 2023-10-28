@@ -38,8 +38,12 @@ class MKController extends Controller
         return view('MK.create');
     }
 
+    public function edit($id)
+    {
+        return view('MK.edit', ['matkul' => $this->matkul[$id], 'id' => $id]);
+    }
+
     public function show($id)
     {
-        return view('MK', ['matkul' => $this->matkul[$id], 'id' => $id]);
     }
 }
