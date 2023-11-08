@@ -22,7 +22,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">NIM</th>
+                        <th scope="col">Kode Mataka Kuliah</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Jurusan</th>
                         <th scope="col"></th>
@@ -37,7 +37,10 @@
                             <td class="float-end">
                                 <a class="btn btn-sm btn-warning"
                                     href="{{ url('/mk/' . $m->id . '/edit') }}">Ubah</a>
-                                <button class="btn btn-sm btn-danger">Hapus</button>
+                                <form style="display: inline;" action="{{ url('/mk/' . $m->id) }}" method ="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </td>
                         </tr>
                     @endforeach

@@ -3,7 +3,7 @@
 @section('title', 'Ubah Mahasiswa')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/mk') }}">Mahasiswa</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/mk') }}">Matakuliah</a></li>
     <li class="breadcrumb-item active">Ubah</li>
 @endsection
 
@@ -14,7 +14,7 @@
                 <h4 class="card-title">Form Ubah Mata Kuliah</h4>
             </div>
         </div>
-        <form action="{{ url('/mahasiswa/' . $id) }}" method="POST">
+        <form action="{{ url('/mk/' . $id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">

@@ -3,7 +3,7 @@
 @section('title', 'Tambah Matakuliah')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/MK') }}">Mata Kuliah</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/mk') }}">Mata Kuliah</a></li>
     <li class="breadcrumb-item active">Tambah</li>
 @endsection
 
@@ -14,7 +14,7 @@
                 <h4 class="card-title">Form Tambah Matakuliah</h4>
             </div>
         </div>
-        <form action="{{ url('/MK') }}" method="POST">
+        <form action="{{ url('/mk') }}" method="POST">
             <div class="card-body">
                 @csrf
                 <div>
@@ -28,10 +28,9 @@
                 <div>
                     <label class="form-label">Jurusan</label>
                     <select class="form-select" name="jurusan">
-                        <option value="1">TI</option>
-                        <option value="2">SK</option>
-                        <option value="3">DGM</option>
-                        <option value="3">BD</option>
+                        @foreach ($jurusan as $j)
+                            <option value="{{ $j->id }}">{{ $j->nama }}</option>
+                        @endforeach
                     </select>
                 </div>
 
